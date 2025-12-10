@@ -48,7 +48,11 @@
           <h2 class="h2">Grafico</h2>
           <p class="subp">Ecco il grafico della tua funzione</p>
         </template>
-        <XYChart :x-data="fetchedData.punti_x" :y-data="fetchedData.punti_y" />
+        <XYChart
+          :x-data="fetchedData.punti_x"
+          :y-data="fetchedData.punti_y"
+          class="w-full h-full"
+        />
       </UCard>
     </div>
   </div>
