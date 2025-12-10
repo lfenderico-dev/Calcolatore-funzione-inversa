@@ -13,7 +13,54 @@
           </p>
         </div>
       </template>
-      <div>
+      <div class="flex flex-col gap-2">
+        <UPopover mode="hover" class="w-fit">
+          <UButton
+            icon="i-heroicons-information-circle"
+            variant="ghost"
+            size="xl"
+          ></UButton>
+          <template #content>
+            <div class="flex flex-col gap-2 p-6 overflow-y-auto h-100">
+              <h3 class="h2">Come scrivere le formule</h3>
+              <ul>
+                <li>Addizione: ( + )</li>
+                <li>Sottrazione: ( - )</li>
+                <li>Moltiplicazione: ( * )</li>
+                <li>Divisione: ( / )</li>
+                <li>Potenza: ( ** )</li>
+                <li>Radice quadrata: ( sqrt() )</li>
+                <li>Radice cubica: ( cbrt() )</li>
+                <li>Logaritmo: ( log(x) )</li>
+                <li>Logaritmo in base e: ( ln(x) )</li>
+                <li>Seno: ( sin(x) )</li>
+                <li>Coseno: ( cos(x) )</li>
+                <li>Tangente: ( tan(x) )</li>
+                <li>Cotangente: ( cot(x) )</li>
+                <li>Secante: ( sec(x) )</li>
+                <li>Cosecante: ( csc(x) )</li>
+                <li>Arco seno: ( asin(x) )</li>
+                <li>Arco coseno: ( acos(x) )</li>
+                <li>Arco tangente: ( atan(x) )</li>
+                <li>Arco cotangente: ( acot(x) )</li>
+                <li>Arco secante: ( asec(x) )</li>
+                <li>Arco cosecante: ( acsc(x) )</li>
+                <li>Seno hiperbolico: ( sinh(x) )</li>
+                <li>Coseno hiperbolico: ( cosh(x) )</li>
+                <li>Tangente hiperbolica: ( tanh(x) )</li>
+                <li>Cotangente hiperbolica: ( coth(x) )</li>
+                <li>Secante hiperbolica: ( sech(x) )</li>
+                <li>Cosecante hiperbolica: ( csch(x) )</li>
+                <li>Arco seno hiperbolico: ( asinh(x) )</li>
+                <li>Arco coseno hiperbolico: ( acosh(x) )</li>
+                <li>Arco tangente hiperbolica: ( atanh(x) )</li>
+                <li>Arco cotangente hiperbolica: ( acoth(x) )</li>
+                <li>Arco secante hiperbolica: ( asech(x) )</li>
+                <li>Arco cosecante hiperbolica: ( acsch(x) )</li>
+              </ul>
+            </div>
+          </template>
+        </UPopover>
         <UFormField label="Inserisci qui la funzione" :ui="{ label: 'subp' }">
           <UInput v-model="funzione" size="xl" class="w-full" />
           <UButton @click="getFunzioneInversa" class="my-2">Calcola</UButton>
@@ -276,7 +323,7 @@ const getFunzioneInversa = async () => {
   );
 
   if (error.value) {
-    errore.value = error.value.data?.detail || "Errore durante il calcolo";
+    errore.value = "Errore durante il calcolo, perfavore riprovare";
     toast.add({
       title: "Errore",
       description: errore.value,
