@@ -76,7 +76,7 @@ const getFunzioneInversa = async () => {
   fetchedData.value = null;
 
   const { data: risultato, error } = await useFetch<FunctionResult>(
-    "http://127.0.0.1:8000/calculate-inverse",
+    "http://127.0.0.1:8000/calcolo-analisi",
     {
       method: "POST",
       body: {

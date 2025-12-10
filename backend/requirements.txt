@@ -2,3 +2,5 @@ fastapi
 uvicorn
 sympy
 numpy
+requests
+python-dotenv
