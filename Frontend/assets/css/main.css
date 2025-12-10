@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@tailwind utilities;
+
+:root {
+  --ui-bg: var(--ui-color-neutral-50);
+}
+
+.dark {
+  --ui-bg: var(--ui-color-neutral-900);
+}
+
+@theme {
+  --font-sans: "Lato", sans-serif;
+}
+
+@layer utilities {
+  .h1 {
+    @apply text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold;
+  }
+  .h2 {
+    @apply text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold;
+  }
+  .subheading {
+    @apply text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold;
+  }
+  .p {
+    @apply text-lg lg:text-xl xl:text-2xl opacity-70;
+  }
+  .subp {
+    @apply text-sm lg:text-lg opacity-70;
+  }
+  .button {
+    @apply text-lg lg:text-xl xl:text-2xl w-fit mx-auto lg:mx-0 px-6;
+  }
+  .icon {
+    @apply size-6 lg:size-12;
+  }
+  .logo {
+    @apply size-6 lg:size-12 text-primary;
+  }
+  .card {
+    @apply shadow-lg shadow-black/40 border border-white/5;
+  }
+}
